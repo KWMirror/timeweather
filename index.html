@@ -78,7 +78,7 @@
         }
 
         function refreshForecastWeather() {
-            jsonp.request("https://api.openweathermap.org/data/2.5/onecall?" + _apiParams + "&callback=jsonp.response" + "&_timestamp=" + (new Date()).getTime()
+            jsonp.request("https://api.openweathermap.org/data/2.5/forecast?" + _apiParams + "&callback=jsonp.response" + "&_timestamp=" + (new Date()).getTime()
                 , function (data) {
                     processForecastWeather(data);
                 }, "forecast");
@@ -102,7 +102,7 @@
             for (var i = 0; i < forecastCount; i++) {
                 var forecast = data.list[i];
 
-                forecastsCells[i].temp.innerHTML = Math.round(forecast.min.temp)+ Math.round(forecast.max.temp)+ unitsSymbolHtml;
+                forecastsCells[i].temp.innerHTML = Math.round(forecast.main.temp) + unitsSymbolHtml;
                 forecastsCells[i].icon.className = getIconClassName(forecast.weather[0], new Date(forecast.dt * 1000));
                 forecastsCells[i].desc.innerHTML = forecast.weather[0].description;
                 forecastsCells[i].time.innerHTML = momentWithCorrectUtcOffset(new Date(forecast.dt * 1000)).format(timeFormat);
@@ -203,7 +203,7 @@
             lastUpdate.innerHTML = momentWithCorrectUtcOffset(new Date()).format("HH:mm");
             var sunrise = momentWithCorrectUtcOffset(new Date(data.sys.sunrise * 1000));
             var sunset = momentWithCorrectUtcOffset(new Date(data.sys.sunset * 1000));
-
+            
             _sunriseHour = sunrise.hour();
             _sunsetHour = sunset.hour();
 
