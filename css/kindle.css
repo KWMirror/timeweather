@@ -134,8 +134,7 @@ html.night {
     position: absolute;
     bottom: 46%;
     left: 3.3%;
-    font-size: 10px;
-    font-size: 4rem;
+    font-size: 2rem;
 
 }
 
@@ -215,7 +214,6 @@ html.night {
 }
 
 .landscape #date {
-    font-size: 10px;
     font-size: 2rem;
 }
 
