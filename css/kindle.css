@@ -130,16 +130,16 @@ html.night {
     border-right: none;
 }
 
-#date {
+.date {
     position: absolute;
     bottom: 46%;
     left: 3.3%;
-    font-size: 100px;
+    font-size: 10px;
     font-size: 4rem;
 
 }
 
-#sun {
+.sun {
     position: absolute;
     bottom: 0%;
     left: 3%;
@@ -215,7 +215,7 @@ html.night {
 }
 
 .landscape #date {
-    font-size: 100px;
+    font-size: 10px;
     font-size: 2rem;
 }
 
