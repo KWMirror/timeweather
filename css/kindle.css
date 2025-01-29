@@ -130,7 +130,7 @@ html.night {
     border-right: none;
 }
 
-.date {
+#date {
     position: absolute;
     bottom: 46%;
     left: 3.3%;
